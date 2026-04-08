@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">gp7_minigame</string>
+    <string name="main_title">Mini Game Arena</string>
+    <string name="main_subtitle">Jump in and challenge your high score.</string>
+    <string name="login_button">Login</string>
+    <string name="login_page_title">User Login</string>
+    <string name="login_username_placeholder">Username</string>
+    <string name="login_password_placeholder">Password</string>
+    <string name="create_account_button">Create Account</string>
+    <string name="login_success_message">Login selected</string>
+    <string name="create_account_click_message">Create account selected</string>
 </resources>
