@@ -24,4 +24,5 @@
     <string name="unfinish_level">Unfinish Level</string>
     <string name="scoreboard_title">Scoreboard</string>
     <string name="return_button">Back</string>
+    <string name="click_me">Click Me!!!</string>
 </resources>
