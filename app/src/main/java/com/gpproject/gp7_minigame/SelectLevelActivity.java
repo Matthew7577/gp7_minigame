@@ -36,5 +36,23 @@ public class SelectLevelActivity extends AppCompatActivity {
                 });
             }
         }
+
+        Button btnLogout = findViewById(R.id.btnLogout);
+        if (btnLogout != null) {
+            btnLogout.setOnClickListener(v -> {
+                Intent intent = new Intent(SelectLevelActivity.this, MainActivity.class);
+                // Clear the back stack so the user cannot go back to the previous activities
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            });
+        }
+
+        Button btnScoreboard = findViewById(R.id.btnScoreboard);
+        if (btnScoreboard != null) {
+            btnScoreboard.setOnClickListener(v -> {
+                Toast.makeText(SelectLevelActivity.this, "Scoreboard Selected", Toast.LENGTH_SHORT).show();
+            });
+        }
     }
 }

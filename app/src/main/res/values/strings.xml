@@ -20,4 +20,6 @@
     <string name="level_8">8</string>
     <string name="level_9">9</string>
     <string name="level_10">10</string>
+    <string name="logout">Logout</string>
+    <string name="scoreboard">Scoreboard</string>
 </resources>
