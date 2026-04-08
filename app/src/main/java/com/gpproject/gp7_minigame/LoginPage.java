@@ -38,12 +38,13 @@ public class LoginPage extends AppCompatActivity {
 			if (prefs.contains(username)) {
 				String storedPassword = prefs.getString(username, "");
 				if (password.equals(storedPassword)) {
+					prefs.edit().putString("currentUser", username).apply();
 					Toast.makeText(LoginPage.this, R.string.login_success_message, Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 					startActivity(intent);
 					finish();
 				} else {
-					Toast.makeText(LoginPage.this, "Invalid password", Toast.LENGTH_SHORT).show();
+					Toast.makeText(LoginPage.this, "Invalid password or account is being registered", Toast.LENGTH_SHORT).show();
 				}
 			} else {
 				Toast.makeText(LoginPage.this, "Account not found, please create one", Toast.LENGTH_SHORT).show();
@@ -62,7 +63,8 @@ public class LoginPage extends AppCompatActivity {
 			if (prefs.contains(username)) {
 				Toast.makeText(LoginPage.this, "Account already exists", Toast.LENGTH_SHORT).show();
 			} else {
-				prefs.edit().putString(username, password).apply();
+				prefs.edit().putString(username, password)
+						.putString("currentUser", username).apply();
 				Toast.makeText(LoginPage.this, R.string.create_account_click_message, Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 				startActivity(intent);

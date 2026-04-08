@@ -22,4 +22,6 @@
     <string name="level_10">10</string>
     <string name="logout">Logout</string>
     <string name="scoreboard">Scoreboard</string>
+    <string name="finish_level">Finish Level</string>
+    <string name="unfinish_level">Unfinish Level</string>
 </resources>
