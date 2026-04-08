@@ -1,6 +1,7 @@
 package com.gpproject.gp7_minigame;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class LoginPage extends AppCompatActivity {
 			String password = passwordInput.getText().toString().trim();
 
 			if (username.isEmpty() || password.isEmpty()) {
+				Log.d("Login/Register", "Login failed: empty username or password");
 				Toast.makeText(LoginPage.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
 				return;
 			}
@@ -39,15 +41,17 @@ public class LoginPage extends AppCompatActivity {
 				String storedPassword = prefs.getString(username, "");
 				if (password.equals(storedPassword)) {
 					prefs.edit().putString("currentUser", username).apply();
-					Toast.makeText(LoginPage.this, R.string.login_success_message, Toast.LENGTH_SHORT).show();
+					Log.i("Login/Register", "Account: " + username + " is login");
 					Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 					startActivity(intent);
 					finish();
 				} else {
-					Toast.makeText(LoginPage.this, "Invalid password or account is being registered", Toast.LENGTH_SHORT).show();
+					Log.d("Login/Register", "Login failed: invalid password for user: '" + username + "'");
+					Toast.makeText(LoginPage.this, "Invalid password or account already exists", Toast.LENGTH_SHORT).show();
 				}
 			} else {
-				Toast.makeText(LoginPage.this, "Account not found, please create one", Toast.LENGTH_SHORT).show();
+				Log.d("Login/Register", "Login failed: account not found for user: '" + username + "'");
+				Toast.makeText(LoginPage.this, "Account not found, please register", Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -56,16 +60,18 @@ public class LoginPage extends AppCompatActivity {
 			String password = passwordInput.getText().toString().trim();
 
 			if (username.isEmpty() || password.isEmpty()) {
+				Log.d("Login/Register", "Registration failed: empty username or password");
 				Toast.makeText(LoginPage.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
 			if (prefs.contains(username)) {
+				Log.d("Login/Register", "Registration failed: account already exists for user: '" + username + "'");
 				Toast.makeText(LoginPage.this, "Account already exists", Toast.LENGTH_SHORT).show();
 			} else {
 				prefs.edit().putString(username, password)
 						.putString("currentUser", username).apply();
-				Toast.makeText(LoginPage.this, R.string.create_account_click_message, Toast.LENGTH_SHORT).show();
+				Log.i("Login/Register", "Account: " + username + " is register");
 				Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 				startActivity(intent);
 				finish();

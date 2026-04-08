@@ -20,6 +20,7 @@
         <activity android:name=".Level8Activity" android:exported="false" />
         <activity android:name=".Level9Activity" android:exported="false" />
         <activity android:name=".Level10Activity" android:exported="false" />
+        <activity android:name=".ScoreboardActivity" android:exported="false" />
         <activity
             android:name=".SelectLevelActivity"
             android:exported="false" />

@@ -1,5 +1,6 @@
 package com.gpproject.gp7_minigame;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SelectLevelActivity extends AppCompatActivity {
 
-    private int[] buttonIds = {
+    private final int[] buttonIds = {
         R.id.btnLevel1, R.id.btnLevel2, R.id.btnLevel3, R.id.btnLevel4, R.id.btnLevel5,
         R.id.btnLevel6, R.id.btnLevel7, R.id.btnLevel8, R.id.btnLevel9, R.id.btnLevel10
     };
@@ -54,7 +55,8 @@ public class SelectLevelActivity extends AppCompatActivity {
         Button btnScoreboard = findViewById(R.id.btnScoreboard);
         if (btnScoreboard != null) {
             btnScoreboard.setOnClickListener(v -> {
-                Toast.makeText(SelectLevelActivity.this, "Scoreboard Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SelectLevelActivity.this, ScoreboardActivity.class);
+                startActivity(intent);
             });
         }
     }
@@ -65,6 +67,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         updateLevelProgress();
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateLevelProgress() {
         SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String currentUser = prefs.getString("currentUser", "");

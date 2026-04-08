@@ -2,13 +2,11 @@
     <string name="app_name">gp7_minigame</string>
     <string name="main_title">**Placeholder</string>
     <string name="main_subtitle">**Longer Longer Placeholder</string>
-    <string name="login_button">Login</string>
+    <string name="enter_button">Enter</string>
     <string name="login_page_title">User Login</string>
     <string name="login_username_placeholder">Username</string>
     <string name="login_password_placeholder">Password</string>
     <string name="create_account_button">Create Account</string>
-    <string name="login_success_message">Login selected</string>
-    <string name="create_account_click_message">Create account selected</string>
     <string name="select_level">Select Level</string>
     <string name="level_1">1</string>
     <string name="level_2">2</string>
@@ -24,4 +22,6 @@
     <string name="scoreboard">Scoreboard</string>
     <string name="finish_level">Finish Level</string>
     <string name="unfinish_level">Unfinish Level</string>
+    <string name="scoreboard_title">Scoreboard</string>
+    <string name="return_button">Back</string>
 </resources>
