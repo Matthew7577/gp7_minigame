@@ -1,4 +1,4 @@
-﻿package com.gpproject.gp7_minigame;
+package com.gpproject.gp7_minigame;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 public class Level9Activity extends AppCompatActivity {

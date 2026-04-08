@@ -10,6 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gp7_minigame">
+        <activity android:name=".Level1Activity" android:exported="false" />
+        <activity android:name=".Level2Activity" android:exported="false" />
+        <activity android:name=".Level3Activity" android:exported="false" />
+        <activity android:name=".Level4Activity" android:exported="false" />
+        <activity android:name=".Level5Activity" android:exported="false" />
+        <activity android:name=".Level6Activity" android:exported="false" />
+        <activity android:name=".Level7Activity" android:exported="false" />
+        <activity android:name=".Level8Activity" android:exported="false" />
+        <activity android:name=".Level9Activity" android:exported="false" />
+        <activity android:name=".Level10Activity" android:exported="false" />
         <activity
             android:name=".SelectLevelActivity"
             android:exported="false" />

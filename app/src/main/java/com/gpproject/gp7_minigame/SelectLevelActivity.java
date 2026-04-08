@@ -3,6 +3,7 @@ package com.gpproject.gp7_minigame;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,13 +19,20 @@ public class SelectLevelActivity extends AppCompatActivity {
             R.id.btnLevel6, R.id.btnLevel7, R.id.btnLevel8, R.id.btnLevel9, R.id.btnLevel10
         };
 
+        Class<?>[] levelClasses = {
+            Level1Activity.class, Level2Activity.class, Level3Activity.class, Level4Activity.class, Level5Activity.class,
+            Level6Activity.class, Level7Activity.class, Level8Activity.class, Level9Activity.class, Level10Activity.class
+        };
+
         for (int i = 0; i < buttonIds.length; i++) {
             final int level = i + 1;
+            final int index = i;
             Button btn = findViewById(buttonIds[i]);
             if (btn != null) {
                 btn.setOnClickListener(v -> {
                     Toast.makeText(SelectLevelActivity.this, "Level " + level + " Selected", Toast.LENGTH_SHORT).show();
-                    // TODO: Start relevant Level Activity
+                    Intent intent = new Intent(SelectLevelActivity.this, levelClasses[index]);
+                    startActivity(intent);
                 });
             }
         }
