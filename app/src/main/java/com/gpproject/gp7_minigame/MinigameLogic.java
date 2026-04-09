@@ -1,14 +1,26 @@
 package com.gpproject.gp7_minigame;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import java.util.Random;
 
-public class MinigameLogic {
+public class MinigameLogic implements View.OnTouchListener {
+private int deltaX;
+    private int deltaY;
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Log.d("MinigameLogic", "hi");
+        return false;
+    }
+
     public interface GameState {
         boolean isFinished();
     }
@@ -49,4 +61,32 @@ public class MinigameLogic {
             root.invalidate();
         }
     }
+    @SuppressLint("ClickableViewAccessibility")
+    public void movetheButton(ViewGroup main, Button btn, ViewGroup root, GameState gameState) {
+        Log.d("MinigameLogic", "bye");
+        btn.setOnTouchListener(new View.OnTouchListener (){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.d("MinigameLogic", "LOL");
+                final int X = (int) event.getRawX();
+                final int Y = (int) event.getRawY();
+                switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_DOWN:
+                    RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) btn.getLayoutParams();
+                    deltaX = X - lParams.leftMargin;
+                    deltaY = Y - lParams.topMargin;
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) btn.getLayoutParams();
+                    layoutParams.leftMargin = X - deltaX;
+                    layoutParams.topMargin = Y - deltaY;
+                    btn.setLayoutParams(layoutParams);
+                    break;
+                }
+                root.invalidate();
+                return false;
+            }
+        });
+    }
+
 }

@@ -13,7 +13,7 @@ public class Level2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_2);
         PauseMenuHelper.setupPauseButton(this);
-
+        new MinigameLogic().movetheButton(findViewById(R.id.area2), findViewById(R.id.btnClickMe2), findViewById(R.id.area2), () -> false);
         Button btnFinishLevel = findViewById(R.id.btnFinishLevel);
         if (btnFinishLevel != null) {
             btnFinishLevel.setOnClickListener(v -> {
@@ -44,5 +44,4 @@ public class Level2Activity extends AppCompatActivity {
         }
     }
 
-    
 }
