@@ -3,8 +3,8 @@ package com.gpproject.gp7_minigame;
 import android.os.Handler;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import java.util.Random;
 

@@ -1,10 +1,12 @@
 package com.gpproject.gp7_minigame;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Level1Activity extends AppCompatActivity {
