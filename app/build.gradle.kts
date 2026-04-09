@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.gpproject.gp7_minigame"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.gpproject.gp7_minigame"
