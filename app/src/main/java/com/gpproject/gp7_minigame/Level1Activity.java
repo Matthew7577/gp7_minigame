@@ -1,6 +1,9 @@
 package com.gpproject.gp7_minigame;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -20,6 +23,8 @@ public class Level1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_1);
+        PauseMenuHelper.setupPauseButton(this);
+
         btnClickMe = findViewById(R.id.btnClickMe);
         root = findViewById(R.id.move_area);
         moveButton();
@@ -71,7 +76,7 @@ public class Level1Activity extends AppCompatActivity {
                 if (clicked){
                     return;
                 } else {
-                    handler.postDelayed(this, 500);
+                    handler.postDelayed(this, 1000);
                 }
             }
         };
@@ -79,4 +84,6 @@ public class Level1Activity extends AppCompatActivity {
         // Delayed execution (2 seconds)
         root.invalidate();
     }
+
+    
 }

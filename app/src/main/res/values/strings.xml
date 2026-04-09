@@ -25,4 +25,8 @@
     <string name="scoreboard_title">Scoreboard</string>
     <string name="return_button">Back</string>
     <string name="click_me">Click Me!!!</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Resume</string>
+    <string name="restart_button">Restart</string>
+    <string name="return_level_select_button">Return to Level Select</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.gpproject.gp7_minigame;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -10,6 +13,8 @@ public class Level7Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_7);
+        PauseMenuHelper.setupPauseButton(this);
+
         Button btnFinishLevel = findViewById(R.id.btnFinishLevel);
         if (btnFinishLevel != null) {
             btnFinishLevel.setOnClickListener(v -> {
@@ -39,4 +44,6 @@ public class Level7Activity extends AppCompatActivity {
             });
         }
     }
+
+    
 }
