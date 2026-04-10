@@ -61,7 +61,7 @@ private boolean clicked = false;
         }
     }
     @SuppressLint("ClickableViewAccessibility")
-    public void movetheButton(ViewGroup main, Button btn, ViewGroup root, GameState gameState, ImageView btnZone) {
+    public void movetheButton(ViewGroup main, Button btn, ViewGroup root, GameState gameState, ImageView btnZone, int deviation) {
         Log.d("MinigameLogic", "bye");
         btn.setOnTouchListener(new View.OnTouchListener (){
             @Override
@@ -82,8 +82,8 @@ private boolean clicked = false;
                     break;
                 case MotionEvent.ACTION_UP:
                     Log.d("MinigameLogic", "Button released at: (" + btn.getLeft() + ", " + btn.getY() + ")");
-                    if (btn.getLeft() >= btnZone.getX()-20 && btn.getLeft() <= btnZone.getX()+20
-                            && btn.getY() <= btnZone.getY()+20 && btn.getY() >= btnZone.getY()-20) {
+                    if (btn.getLeft() >= btnZone.getX()- deviation && btn.getLeft() <= btnZone.getX() + deviation
+                            && btn.getY() <= btnZone.getY() + deviation && btn.getY() >= btnZone.getY() - deviation) {
                         Log.d("MinigameLogic", "Button in zone, stopping movement.");
                         clicked = true;
 
