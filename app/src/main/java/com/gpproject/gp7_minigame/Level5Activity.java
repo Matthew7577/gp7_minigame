@@ -25,7 +25,7 @@ public class Level5Activity extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
                 String currentUser = prefs.getString("currentUser", "");
                 if (!currentUser.isEmpty()) {
-                    prefs.edit().putBoolean(currentUser + "_level_2_finished", false).apply();
+                    prefs.edit().putBoolean(currentUser + "_level_5_finished", false).apply();
                     Toast.makeText(this, "Level 5 Unfinished!", Toast.LENGTH_SHORT).show();
                     finish(); // Return to SelectLevelActivity
                 } else {
