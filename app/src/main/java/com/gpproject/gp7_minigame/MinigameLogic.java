@@ -7,20 +7,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.Random;
+
+import javax.net.ssl.HandshakeCompletedEvent;
 
 public class MinigameLogic implements View.OnTouchListener {
 private int deltaX;
     private int deltaY;
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        Log.d("MinigameLogic", "hi");
-        return false;
-    }
-
+private boolean clicked = false;
     public interface GameState {
         boolean isFinished();
     }
@@ -51,6 +49,7 @@ private int deltaX;
 
                 if (gameState != null && gameState.isFinished()) {
                     Log.d("MinigameLogic", "Stop moveButton.");
+
                 } else {
                     handler.postDelayed(this, delayMillis);
                 }
@@ -62,12 +61,11 @@ private int deltaX;
         }
     }
     @SuppressLint("ClickableViewAccessibility")
-    public void movetheButton(ViewGroup main, Button btn, ViewGroup root, GameState gameState) {
+    public void movetheButton(ViewGroup main, Button btn, ViewGroup root, GameState gameState, ImageView btnZone) {
         Log.d("MinigameLogic", "bye");
         btn.setOnTouchListener(new View.OnTouchListener (){
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.d("MinigameLogic", "LOL");
                 final int X = (int) event.getRawX();
                 final int Y = (int) event.getRawY();
                 switch (event.getAction() & MotionEvent.ACTION_MASK) {
@@ -82,11 +80,25 @@ private int deltaX;
                     layoutParams.topMargin = Y - deltaY;
                     btn.setLayoutParams(layoutParams);
                     break;
+                case MotionEvent.ACTION_UP:
+                    Log.d("MinigameLogic", "Button released at: (" + btn.getLeft() + ", " + btn.getY() + ")");
+                    if (btn.getLeft() >= btnZone.getX()-20 && btn.getLeft() <= btnZone.getX()+20
+                            && btn.getY() <= btnZone.getY()+20 && btn.getY() >= btnZone.getY()-20) {
+                        Log.d("MinigameLogic", "Button in zone, stopping movement.");
+                        clicked = true;
+
+                    }
                 }
                 root.invalidate();
                 return false;
             }
         });
     }
-
+    public boolean isClicked(){
+        return clicked;
+    }
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
+    }
 }
