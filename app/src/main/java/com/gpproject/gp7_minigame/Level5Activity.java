@@ -18,20 +18,7 @@ public class Level5Activity extends AppCompatActivity {
         PauseMenuHelper.setupPauseButton(this);
         MinigameLogic minigameLogic = new MinigameLogic();
         minigameLogic.movetheButton(findViewById(R.id.area), findViewById(R.id.btnClickMe), findViewById(R.id.area), () -> false, findViewById(R.id.buttonZone));
-        Button btnFinishLevel = findViewById(R.id.btnFinishLevel);
-        if (btnFinishLevel != null) {
-            btnFinishLevel.setOnClickListener(v -> {
-                SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-                String currentUser = prefs.getString("currentUser", "");
-                if (!currentUser.isEmpty()) {
-                    prefs.edit().putBoolean(currentUser + "_level_5_finished", true).apply();
-                    Toast.makeText(this, "Level 5 Finished!", Toast.LENGTH_SHORT).show();
-                    finish(); // Return to SelectLevelActivity
-                } else {
-                    Toast.makeText(this, "Not logged in!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+
         Button btnUnfinishLevel = findViewById(R.id.btnUnfinishLevel);
         if (btnUnfinishLevel != null) {
             btnUnfinishLevel.setOnClickListener(v -> {
