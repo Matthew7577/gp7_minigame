@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +16,7 @@ public class Level5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_5);
         PauseMenuHelper.setupPauseButton(this);
         MinigameLogic minigameLogic = new MinigameLogic();
-        minigameLogic.movetheButton(findViewById(R.id.area), findViewById(R.id.btnClickMe), findViewById(R.id.area), () -> false, findViewById(R.id.buttonZone), 20);
+        minigameLogic.moveTheButton(findViewById(R.id.btnClickMe), findViewById(R.id.area), findViewById(R.id.buttonZone), 20);
 
         Button btnUnfinishLevel = findViewById(R.id.btnUnfinishLevel);
         if (btnUnfinishLevel != null) {

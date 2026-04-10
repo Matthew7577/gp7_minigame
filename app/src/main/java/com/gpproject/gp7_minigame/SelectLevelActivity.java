@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             Button btn = findViewById(buttonIds[i]);
             if (btn != null) {
                 btn.setOnClickListener(v -> {
+                    Log.d("SelectLevel", "Level " + level + " button clicked");
                     Toast.makeText(SelectLevelActivity.this, "Level " + level + " Selected", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SelectLevelActivity.this, levelClasses[index]);
                     startActivity(intent);

@@ -28,50 +28,56 @@ public class LoginPage extends AppCompatActivity {
 		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
 		loginActionButton.setOnClickListener(v -> {
+			Log.d("LoginPage", "Login button clicked!");
 			String username = usernameInput.getText().toString().trim();
 			String password = passwordInput.getText().toString().trim();
 
 			if (username.isEmpty() || password.isEmpty()) {
-				Log.d("Login/Register", "Login failed: empty username or password");
+				Log.d("LoginPage", "Login failed: empty username or password");
 				Toast.makeText(LoginPage.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
 			if (prefs.contains(username)) {
+				Log.d("LoginPage", "Username found in Preferences: " + username);
 				String storedPassword = prefs.getString(username, "");
 				if (password.equals(storedPassword)) {
+					Log.d("LoginPage", "Password matches! Logging in...");
 					prefs.edit().putString("currentUser", username).apply();
-					Log.i("Login/Register", "Account: " + username + " is login");
+					Log.d("LoginPage", "Account: " + username + " is login");
 					Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 					startActivity(intent);
 					finish();
 				} else {
-					Log.d("Login/Register", "Login failed: invalid password for user: '" + username + "'");
+					Log.d("LoginPage", "Login failed: invalid password for user: '" + username + "'");
 					Toast.makeText(LoginPage.this, "Invalid password or account already exists", Toast.LENGTH_SHORT).show();
 				}
 			} else {
-				Log.d("Login/Register", "Login failed: account not found for user: '" + username + "'");
+				Log.d("LoginPage", "Login failed: account not found for user: '" + username + "'");
 				Toast.makeText(LoginPage.this, "Account not found, please register", Toast.LENGTH_SHORT).show();
 			}
 		});
 
 		createAccountButton.setOnClickListener(v -> {
+			Log.d("LoginPage", "Create account button clicked!");
 			String username = usernameInput.getText().toString().trim();
 			String password = passwordInput.getText().toString().trim();
+			Log.d("LoginPage", "Attempted to register username: " + username);
 
 			if (username.isEmpty() || password.isEmpty()) {
-				Log.d("Login/Register", "Registration failed: empty username or password");
+				Log.d("LoginPage", "Registration failed: empty username or password");
 				Toast.makeText(LoginPage.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
 			if (prefs.contains(username)) {
-				Log.d("Login/Register", "Registration failed: account already exists for user: '" + username + "'");
+				Log.d("LoginPage", "Registration failed: account already exists for user: '" + username + "'");
 				Toast.makeText(LoginPage.this, "Account already exists", Toast.LENGTH_SHORT).show();
 			} else {
+				Log.d("LoginPage", "Registering new account: " + username);
 				prefs.edit().putString(username, password)
 						.putString("currentUser", username).apply();
-				Log.i("Login/Register", "Account: " + username + " is register");
+				Log.d("LoginPage", "Account: " + username + " is now register");
 				Intent intent = new Intent(LoginPage.this, SelectLevelActivity.class);
 				startActivity(intent);
 				finish();
