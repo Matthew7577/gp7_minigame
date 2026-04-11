@@ -94,4 +94,23 @@ public class Level7Activity extends AppCompatActivity {
             finish();
         }
     }
+    
+    
+    private boolean wasPaused = false;
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MinigameLogic.isGamePaused = true;
+        wasPaused = true;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (wasPaused) {
+            PauseMenuHelper.showPauseMenu(this);
+            wasPaused = false;
+        } else {
+            MinigameLogic.isGamePaused = false;
+        }
+    }
 }

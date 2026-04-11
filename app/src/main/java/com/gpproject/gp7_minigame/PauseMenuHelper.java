@@ -21,13 +21,20 @@ public class PauseMenuHelper {
         Button btnRestart = view.findViewById(R.id.btnRestart);
         Button btnReturn = view.findViewById(R.id.btnReturn);
 
-        btnResume.setOnClickListener(v -> dialog.dismiss());
+        MinigameLogic.isGamePaused = true;
+
+        btnResume.setOnClickListener(v -> {
+            MinigameLogic.isGamePaused = false;
+            dialog.dismiss();
+        });
         btnRestart.setOnClickListener(v -> {
+            MinigameLogic.isGamePaused = false;
             dialog.dismiss();
             activity.finish();
             activity.startActivity(activity.getIntent());
         });
         btnReturn.setOnClickListener(v -> {
+            MinigameLogic.isGamePaused = false;
             dialog.dismiss();
             activity.finish();
         });
@@ -42,4 +49,3 @@ public class PauseMenuHelper {
         }
     }
 }
-

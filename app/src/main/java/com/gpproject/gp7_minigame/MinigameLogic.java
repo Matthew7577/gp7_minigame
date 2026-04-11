@@ -23,6 +23,7 @@ import java.util.Random;
 public class MinigameLogic implements View.OnTouchListener {
 private int deltaX;
     private int deltaY;
+public static boolean isGamePaused = false;
 private boolean clicked = false;
     public interface GameState {
         boolean isFinished();
@@ -34,6 +35,12 @@ private boolean clicked = false;
         final Runnable runnable = new Runnable() {
             @Override
             public void run() {
+                if (isGamePaused) {
+                    if (gameState == null || !gameState.isFinished()) {
+                        handler.postDelayed(this, delayMillis);
+                    }
+                    return;
+                }
                 if (main != null && btnClickMe != null && main.getWidth() > 0 && main.getHeight() > 0) {
                     Random rand = new Random();
                     int xBound = main.getWidth() - btnClickMe.getWidth() - 2;
@@ -124,6 +131,11 @@ private boolean clicked = false;
             @Override
             public void run() {
                 if (isGameOver[0]) return;
+
+                if (isGamePaused) {
+                    handler.postDelayed(this, 100); // Check frequently while paused
+                    return;
+                }
 
                 boolean isBlack = random.nextFloat() < 0.3f; // 30% chance of black ball
 
@@ -237,15 +249,32 @@ private boolean clicked = false;
     private static void animateCatchBall(ImageView ball, int screenHeight, int size, int duration) {
         ball.animate().cancel();
         
-        ball.animate()
-                .translationY(screenHeight + size)
-                .setDuration(duration)
-                .setInterpolator(new LinearInterpolator())
-                .withEndAction(() -> {
-                    if (ball.getVisibility() == View.VISIBLE) {
-                        ball.setVisibility(View.GONE);
-                    }
-                })
-                .start();
+        final Handler handler = new Handler();
+        final long interval = 16;
+        final float targetY = screenHeight + size;
+        final float step = targetY / (duration / (float) interval);
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (ball.getVisibility() != View.VISIBLE) return;
+
+                if (isGamePaused) {
+                    handler.postDelayed(this, interval);
+                    return;
+                }
+
+                float currentY = ball.getTranslationY();
+                float newY = currentY + step;
+
+                if (newY >= targetY) {
+                    ball.setTranslationY(targetY);
+                    ball.setVisibility(View.GONE);
+                } else {
+                    ball.setTranslationY(newY);
+                    handler.postDelayed(this, interval);
+                }
+            }
+        });
     }
 }
