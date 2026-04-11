@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp">
@@ -65,7 +64,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_1"
+            android:text="@string/level_1_button"
             android:textSize="24sp" />
 
         <Button
@@ -73,7 +72,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_2"
+            android:text="@string/level_2_button"
             android:textSize="24sp" />
 
         <Button
@@ -81,7 +80,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_3"
+            android:text="@string/level_3_button"
             android:textSize="24sp" />
 
         <Button
@@ -89,7 +88,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_4"
+            android:text="@string/level_4_button"
             android:textSize="24sp" />
 
         <Button
@@ -97,7 +96,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_5"
+            android:text="@string/level_5_button"
             android:textSize="24sp" />
 
     </GridLayout>
@@ -118,7 +117,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_6"
+            android:text="@string/level_6_button"
             android:textSize="24sp" />
 
         <Button
@@ -126,7 +125,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_7"
+            android:text="@string/level_7_button"
             android:textSize="24sp" />
 
         <Button
@@ -134,7 +133,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_8"
+            android:text="@string/level_8_button"
             android:textSize="24sp" />
 
         <Button
@@ -142,7 +141,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_9"
+            android:text="@string/level_9_button"
             android:textSize="24sp" />
 
         <Button
@@ -150,7 +149,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="8dp"
-            android:text="@string/level_10"
+            android:text="@string/level_10_button"
             android:textSize="24sp" />
 
     </GridLayout>

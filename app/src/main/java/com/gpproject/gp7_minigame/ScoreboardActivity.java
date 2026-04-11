@@ -49,8 +49,8 @@ public class ScoreboardActivity extends AppCompatActivity {
         for (ScoreEntry entry : scores) {
             TextView tv = new TextView(this);
             tv.setText(rank + ". " + entry.username + " - " + entry.score + " levels");
-            tv.setTextSize(18f);
-            tv.setPadding(0, 16, 0, 16);
+            tv.setTextSize(32f);
+            tv.setPadding(0, 48, 0, 48);
             tv.setTextColor(Color.BLACK);
             container.addView(tv);
             rank++;

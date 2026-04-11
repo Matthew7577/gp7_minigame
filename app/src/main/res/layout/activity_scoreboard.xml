@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/scoreboard_title"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="24dp" />
 
     <ScrollView
         android:layout_width="match_parent"
