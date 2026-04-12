@@ -9,17 +9,16 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/heroIcon"
+        android:id="@+id/app_icon"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:contentDescription="@string/app_name"
-        android:src="@android:drawable/star_big_on"
-        app:tint="?attr/colorPrimary"
+        android:src="@drawable/healing"
         app:layout_constraintBottom_toTopOf="@id/titleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="?attr/colorPrimary" />
 
     <TextView
         android:id="@+id/titleText"
@@ -34,7 +33,7 @@
         app:layout_constraintBottom_toTopOf="@id/subtitleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/heroIcon" />
+        app:layout_constraintTop_toBottomOf="@id/app_icon" />
 
     <TextView
         android:id="@+id/subtitleText"

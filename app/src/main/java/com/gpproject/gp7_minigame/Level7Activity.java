@@ -36,9 +36,9 @@ public class Level7Activity extends AppCompatActivity {
         ballPool.add(findViewById(R.id.greenBall3));
         ballPool.add(findViewById(R.id.greenBall4));
         ballPool.add(findViewById(R.id.greenBall5));
-        ballPool.add(findViewById(R.id.blackBall1));
-        ballPool.add(findViewById(R.id.blackBall2));
-        ballPool.add(findViewById(R.id.blackBall3));
+//        ballPool.add(findViewById(R.id.blackBall1));
+//        ballPool.add(findViewById(R.id.blackBall2));
+//        ballPool.add(findViewById(R.id.blackBall3));
 
         MinigameLogic.startCatchBallsGame(this, screenWidth, screenHeight, ballPool, new MinigameLogic.CatchBallsGameCallback() {
             @Override

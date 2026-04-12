@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">gp7_minigame</string>
-    <string name="main_title">**Placeholder</string>
-    <string name="main_subtitle">**Much Longer Placeholder</string>
+    <string name="main_title">Rehabilitation Helper</string>
+    <string name="main_subtitle">Design for hand injury and elderly </string>
     <string name="enter_button">Enter</string>
     <string name="login_page_title">User Login</string>
     <string name="login_username_placeholder">Username</string>
@@ -42,4 +42,5 @@
     <string name="reset_button">Reset</string>
     <string name="level_6_title">Put the button into the moving square</string>
     <string name="click_text">Click</string>
+    <string name="level_8_warning">Notice: Black ball may reset your score!</string>
 </resources>

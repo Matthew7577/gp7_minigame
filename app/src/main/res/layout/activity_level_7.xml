@@ -99,28 +99,28 @@
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <ImageView
-        android:id="@+id/blackBall1"
-        android:tag="blackBall"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <ImageView
-        android:id="@+id/blackBall2"
-        android:tag="blackBall"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <ImageView
-        android:id="@+id/blackBall3"
-        android:tag="blackBall"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <ImageView-->
+<!--        android:id="@+id/blackBall1"-->
+<!--        android:tag="blackBall"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/blackBall2"-->
+<!--        android:tag="blackBall"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/blackBall3"-->
+<!--        android:tag="blackBall"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
