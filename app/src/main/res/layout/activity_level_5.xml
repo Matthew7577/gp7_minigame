@@ -1,73 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/levelTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/level_5"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Button
-        android:id="@+id/btnUnfinishLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/unfinish_level"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <RelativeLayout
-        android:id="@+id/area"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelTitle"
-        app:layout_constraintVertical_bias="1.0">
-
-        <ImageView
-            android:id="@+id/buttonZone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="156dp"
-            android:layout_marginTop="77dp"
-            app:srcCompat="@drawable/circle" />
-
-        <Button
-            android:id="@+id/btnClickMe"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="165dp"
-            android:text="@string/click_me"
-            app:cornerRadius="0dp"/>
-
-    </RelativeLayout>
+    android:layout_height="match_parent"
+    android:background="#ADD8E6">
 
     <Button
         android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
         android:text="@string/pause_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentStart="true"
+        android:layout_margin="17dp" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="17dp" />
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level_5"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="82dp" />
+
+    <ImageView
+        android:id="@+id/targetArea"
+        android:layout_width="91dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="249dp"
+        android:layout_marginTop="399dp"
+        android:background="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnDrag"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="#42A5F5"
+        android:text="@string/click_text"
+        android:textColor="#000000" />
+
+</RelativeLayout>
