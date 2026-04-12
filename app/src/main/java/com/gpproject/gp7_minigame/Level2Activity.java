@@ -29,8 +29,8 @@ public class Level2Activity extends AppCompatActivity {
                 String currentUser = prefs.getString("currentUser", "");
                 clicked = true;
                 if (!currentUser.isEmpty()) {
-                    prefs.edit().putBoolean(currentUser + "_level_1_finished", true).apply();
-                    Toast.makeText(this, "Level 1 Finished!", Toast.LENGTH_SHORT).show();
+                    prefs.edit().putBoolean(currentUser + "_level_2_finished", true).apply();
+                    Toast.makeText(this, "Level 2 Finished!", Toast.LENGTH_SHORT).show();
                     finish(); // Return to SelectLevelActivity
                 } else {
                     Toast.makeText(this, "Not logged in!", Toast.LENGTH_SHORT).show();
