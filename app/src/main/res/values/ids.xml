@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvTimer" type="id"/>
+    <item name="tvInstruction" type="id"/>
+    <item name="tvProgress" type="id"/>
+    <item name="targetButton" type="id"/>
+    <item name="gameArea" type="id"/>
+</resources>

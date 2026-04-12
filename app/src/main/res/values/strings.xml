@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">gp7_minigame</string>
     <string name="main_title">Rehabilitation Helper</string>
     <string name="main_subtitle">Design for hand injury and elderly </string>
@@ -43,4 +43,11 @@
     <string name="level_6_title">Put the button into the moving square</string>
     <string name="click_text">Click</string>
     <string name="level_8_warning">Notice: Black ball may reset your score!</string>
+    <string name="pause">Pause</string>
+    <string name="level_10_final_challenge">Level 10 - Final Challenge</string>
+    <string name="time_60s">Time: 60s</string>
+    <string name="score_0">Score: 0</string>
+    <string name="task_1_waiting_to_start">Task 1: Waiting to start</string>
+    <string name="task_0_4">Task: 0/4</string>
+    <string name="waiting_for_task" tools:ignore="TypographyEllipsis">Waiting for task...</string>
 </resources>
