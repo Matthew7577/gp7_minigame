@@ -39,4 +39,7 @@
     <string name="resume_button">Resume</string>
     <string name="restart_button">Restart</string>
     <string name="return_level_select_button">Return to Level Select</string>
+    <string name="reset_button">Reset</string>
+    <string name="level_6_title">Put the button into the moving square</string>
+    <string name="click_text">Click</string>
 </resources>
