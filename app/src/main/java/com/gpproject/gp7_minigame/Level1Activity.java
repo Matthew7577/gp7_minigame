@@ -38,20 +38,20 @@ public class Level1Activity extends AppCompatActivity {
                 }
             });
         }
-        Button btnUnfinishLevel = findViewById(R.id.btnUnfinishLevel);
-        if (btnUnfinishLevel != null) {
-            btnUnfinishLevel.setOnClickListener(v -> {
-                SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-                String currentUser = prefs.getString("currentUser", "");
-                if (!currentUser.isEmpty()) {
-                    prefs.edit().putBoolean(currentUser + "_level_1_finished", false).apply();
-                    Toast.makeText(this, "Level 1 Unfinished!", Toast.LENGTH_SHORT).show();
-                    finish(); // Return to SelectLevelActivity
-                } else {
-                    Toast.makeText(this, "Not logged in!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+//        Button btnUnfinishLevel = findViewById(R.id.btnUnfinishLevel);
+//        if (btnUnfinishLevel != null) {
+//            btnUnfinishLevel.setOnClickListener(v -> {
+//                SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+//                String currentUser = prefs.getString("currentUser", "");
+//                if (!currentUser.isEmpty()) {
+//                    prefs.edit().putBoolean(currentUser + "_level_1_finished", false).apply();
+//                    Toast.makeText(this, "Level 1 Unfinished!", Toast.LENGTH_SHORT).show();
+//                    finish(); // Return to SelectLevelActivity
+//                } else {
+//                    Toast.makeText(this, "Not logged in!", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        }
     }
     
     

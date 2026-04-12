@@ -166,7 +166,7 @@ public class Level6Activity extends AppCompatActivity {
         String currentUser = prefs.getString("currentUser", "");
         if (!currentUser.isEmpty()) {
             prefs.edit().putBoolean(currentUser + "_level_6_finished", true).apply();
-            Toast.makeText(this, "Level 6 Finished! Great coordination!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Level 6 Finished! Great job!", Toast.LENGTH_SHORT).show();
         }
         finish();
     }
